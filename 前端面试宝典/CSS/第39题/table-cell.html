@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>table-cell</title>
+    <style>
+      .box {
+        width: 300px;
+        height: 300px;
+        background: #ddd;
+      }
+      .small {
+        background: red;
+        width: 100px;
+        height: 100px;
+      }
+
+      .box {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+      }
+      .small {
+        padding: 6px 10px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="small">small</div>
+    </div>
+  </body>
+</html>
