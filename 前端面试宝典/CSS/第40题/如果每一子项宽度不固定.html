@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>如果每一子项宽度不固定</title>
+  </head>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .list {
+      width: 24%;
+      height: 100px;
+      background-color: skyblue;
+      margin-top: 15px;
+    }
+
+    /* 方法一：最后一项margin-right:auto */
+    /* .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .list {
+      background-color: skyblue;
+      margin: 10px;
+    } */
+
+    /* .list:last-child {
+      margin-right: auto;
+    } */
+
+    /* 方法二：创建伪元素并设置flex:auto或flex:1 */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .list {
+      background-color: skyblue;
+      margin: 10px;
+    }
+    /* 使用伪元素辅助左对齐 */
+    .container::after {
+      content: "";
+      flex: auto; /* 或者flex: 1 */
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="list"></div>
+      <div class="list"></div>
+      <div class="list"></div>
+      <div class="list"></div>
+      <div class="list"></div>
+      <div class="list"></div>
+      <div class="list"></div>
+    </div>
+  </body>
+</html>
